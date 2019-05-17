@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+  <title>ONG Miner-本体矿工 </title>
+  <link rel=stylesheet href=https://unpkg.com/spectre.css/dist/spectre.min.css>
+  <link rel=stylesheet href=/css/app.css>
+
+  
+</head>
+
+<body>
+  <div class="noExtension hide" id=noExtension>
+    <div class=card>
+      <div class="card-body mt-3 mb-3"> <h1>FBI　WARNING </h1><br>
+        Please use Chrome and install <u><a target=_blank href=https://github.com/ChengOrangeJu/WebExtensionWallet>WebExtensionWallet</a></u>  to use superMiner!<br><br>
+       <div>注意：请使用谷歌浏览器、并安装钱包插件 <u><a target=_blank href=https://github.com/ChengOrangeJu/WebExtensionWallet>WebExtensionWallet</a></u> 来玩 超级矿工！</div>
+      </div>
+    </div>
+ </div>
+ <div class=mainPage>
+
+ <div class="title h1">ONG Miner <div class="loading loading-lg float-right hide"></div></div>
+
+
+ <header class="navbar mt-3">
+    <section class=navbar-section>
+      <a href=# class="navbar-brand mr-2">首页</a>
+      <a href=javascript:void(0) class="btn btn-link" onclick=App.ruleTip()>规则</a>
+      <a class="btn btn-link" target=_blank href=https://github.com/oppfx/superMiner>GitHub</a>
+    </section>
+    <section class=navbar-section>
+        <button class=btn onclick=App.startMining()> 开始挖矿 </button>
+        <div class="popover popover-left">
+            <button class="btn btn-primary ml-2">Block</button>
+            <div class=popover-container>
+              <div class=card>
+                <div class="card-header nav-block-height">
+                  区块高度：
+                </div>
+                <div class="card-body nav-block-preHash">
+                  
+                </div>
+                <div class="card-body nav-block-nextKey">
+                    
+                  </div>
+                <div class=card-footer>
+                  下一个区块奖励 100 ONG 
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+  </header>
+
+  <div class="container mt-3 bg-dark">
+    <div class=columns>
+      <div class="card col-4">
+      <div class=card-body>
+        <div class="miner-record h3">
+            <div class="card hide" id=builder>
+               <button class=btn onclick="$('#modal-deposit').addClass('active')">充值</button>
+               <button class=btn onclick=App.getBalance()>读取</button>
+               <button class=btn onclick="$('#modal-takeout').addClass('active')">提现</button>
+            </div>
+          挖矿记录
+          
+          <div class=h6 id=status>
+
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="card col-8 bg-dark">
+        <div class="card-body miner-block mt-1 ml-1">
+         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer card-body text-center mt-3">
+        <a href="">
+          <img src=./image/logo-b.png width=150 height=50>
+        </a>
+        <div>基于星云链上的挖矿游戏</div>
+      </div>
+</div>
+    
+
+    <div class=modal id=modal-rule>
+        <a href=#close class=modal-overlay aria-label=Close></a>
+        <div class=modal-container>
+          <div class=modal-header>
+            <a href=javascript:void(0) class="btn btn-clear float-right" aria-label=Close onclick=App.msgClose()></a>
+            <div class="modal-title h5">Super Miner 游戏规则</div>
+          </div>
+          <div class=modal-body>
+            <div class=content>
+              <!-- content here -->
+              <div class=modal-rule-content></div>
+            </div>
+          </div>
+          <div class=modal-footer>
+            <button class="btn btn-primary" onclick=App.msgClose()>确定</button>
+            <button class=btn onclick=App.msgClose()>关闭</button>
+          </div>
+        </div>
+      </div>
+
+      <div class=modal id=modal-deposit>
+          <a href=#close class=modal-overlay aria-label=Close></a>
+          <div class=modal-container>
+            <div class=modal-header>
+              <a href=javascript:void(0) class="btn btn-clear float-right" aria-label=Close onclick=App.msgClose()></a>
+              <div class="modal-title h5">充值</div>
+            </div>
+            <div class=modal-body>
+              <div class=content>
+                <!-- content here -->
+                <div class=modal-deposit-content>
+                  <input type=text id=modal-deposit-input>
+                </div>
+              </div>
+            </div>
+            <div class=modal-footer>
+              <button class="btn btn-primary" onclick=App.deposit()>确定</button>
+              <button class=btn onclick=App.msgClose()>关闭</button>
+            </div>
+          </div>
+        </div>
+
+        <div class=modal id=modal-takeout>
+            <a href=#close class=modal-overlay aria-label=Close></a>
+            <div class=modal-container>
+              <div class=modal-header>
+                <a href=javascript:void(0) class="btn btn-clear float-right" aria-label=Close onclick=App.msgClose()></a>
+                <div class="modal-title h5">提现</div>
+              </div>
+              <div class=modal-body>
+                <div class=content>
+                  <!-- content here -->
+                  <div class=modal-deposit-content>
+                    <input type=text id=modal-takeout-input>
+                  </div>
+                </div>
+              </div>
+              <div class=modal-footer>
+                <button class="btn btn-primary" onclick=App.takeout()>确定</button>
+                <button class=btn onclick=App.msgClose()>关闭</button>
+              </div>
+            </div>
+          </div>
+
+
+          <script src=/js/jquery-2.1.4.min.js></script>
+  
+          <script src=js/ontology-dapi.min.js></script>
+          <script src=/js/app.js></script>
+<script type=text/javascript src=js/path.js?263f6888f95da4e1896d></script></body>
+
+</html>

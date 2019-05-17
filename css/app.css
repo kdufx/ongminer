@@ -1,0 +1,71 @@
+body {
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+    color: #fff;
+    background-color: #1F3571;
+    font-family: "Open Sans", sans-serif;
+  }
+  .bg-dark{
+    background-color: #1F3571;
+  }
+
+  h1,h2{
+    color: #fff;
+  }
+  .hide{
+    display: none;
+  }
+  .mt-3{margin-top:.8rem}
+  
+  
+  .btn-mine{
+    color:#FFF;
+    
+    background-color: #2C3E50;
+  }
+  .btn-mine:hover{
+    background-color: #49657E;
+  }
+  .card-body{
+    word-break:break-all;
+  }
+  .block{
+    width: 5rem;
+    height: 5rem;
+    line-height: 4rem;
+    /* background-color: #ddd; */
+  }
+  
+  .miner-record{
+    height: 600px;
+    overflow: auto;
+  }
+  
+  .loading{
+    width: 100px;
+  }
+  
+  
+  
+  .noExtension {
+    width: 100%;
+    margin: 100px auto;
+    text-align: center;
+    font-size: 23px;
+  }
+  .noExtension h1{
+    color: #F00;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .mining-log{
+    color: #5BAC02;
+  }
+  
+  .footer{
+    color: #666;
+  }
+  
+  
