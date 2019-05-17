@@ -3,15 +3,39 @@ body {
     margin-right: 15%;
     margin-top: 3%;
     color: #fff;
-    background-color: #1F3571;
+    background-color: #363636;
     font-family: "Open Sans", sans-serif;
   }
-  .bg-dark{
-    background-color: #1F3571;
+  div::-webkit-scrollbar {
+    display: none;
+  }
+  a{
+      color: #999 !important;
+  }
+  .loading::after{
+    border: .1rem solid #f00;
+    border-right-color: #363636;
+  border-top-color: #363636;
+  }
+  .black{
+    color: #000;
+  }
+  .container .card{
+    background-color: #363636;
+    border-color: #000
+  }
+  .noExtension .card{
+    background-color: #363636;
   }
 
   h1,h2{
     color: #fff;
+  }
+  .red{
+      color: #F00;
+  }
+  .green{
+      color: #5BAC02;
   }
   .hide{
     display: none;
@@ -27,19 +51,52 @@ body {
   .btn-mine:hover{
     background-color: #49657E;
   }
+
+  .btn{
+    border-color: #000;
+    color: #000;
+  }
+  .btn:active {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+  }
+  .btn.btn-primary{
+      border-color: #000;
+      background-color: #000 !important;
+  }
   .card-body{
     word-break:break-all;
   }
+  .popover-container .card{
+      background-color: #000 ;
+  }
+
+
   .block{
     width: 5rem;
     height: 5rem;
     line-height: 4rem;
-    /* background-color: #ddd; */
+    color: #fff;
+    background-color: #000 !important;
+  }
+
+  .modal-rule-content{
+      color: #000 !important;
+  }
+  .block-mine{
+    opacity: 1;
+    animation:fadeio 1.5s linear infinite; 
   }
   
   .miner-record{
     height: 600px;
-    overflow: auto;
+    /* overflow: auto; */
+  }
+  #status{
+      height: 570px;
+      overflow: auto;
+      margin-top: 5px;
   }
   
   .loading{
@@ -61,11 +118,46 @@ body {
   }
   
   .mining-log{
-    color: #5BAC02;
+    color: #52930B;
   }
   
   .footer{
     color: #666;
   }
   
+
+  /* anima  */
+@keyframes fadeio {
+    0% {
+      /* opacity: 0; */
+      color: #000;
+      background-color: #999;
+    }
+    50% {
+      /* opacity: 1; */
+      color: #fff;      
+      background-color: #000;
+    }
+    100% {
+      /* opacity: 0; */
+      color: #000;
+      background-color: #999;
+    }
+  }
+  @-moz-keyframes fadeio {
+    0% {
+      left:-30px;
+      opacity: 0;}
+    100% {
+      left:0px;
+      opacity: 1;}
+  }
+  @-webkit-keyframes fadeio {
+    0% {
+      left:-30px;
+      opacity: 0;}
+    100% {
+      left:0px;
+      opacity: 1;}
+  }
   

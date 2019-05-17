@@ -16,22 +16,22 @@
 <body>
   <div class="noExtension hide" id=noExtension>
     <div class=card>
-      <div class="card-body mt-3 mb-3"> <h1>FBI　WARNING </h1><br>
-        Please use Chrome and install <u><a target=_blank href=https://github.com/ChengOrangeJu/WebExtensionWallet>WebExtensionWallet</a></u>  to use superMiner!<br><br>
-       <div>注意：请使用谷歌浏览器、并安装钱包插件 <u><a target=_blank href=https://github.com/ChengOrangeJu/WebExtensionWallet>WebExtensionWallet</a></u> 来玩 超级矿工！</div>
+      <div class="card-body mt-3 mb-3"> <h1>WARNING 温馨提示 </h1><br>
+        Please use Chrome and install <u><a target=_blank href=https://chrome.google.com/webstore/detail/cyano-wallet/dkdedlpgdmmkkfjabffeganieamfklkm>Cyano Wallet</a></u>  to use ONG Miner!<br><br>
+       <div>注意：请使用谷歌浏览器、并安装钱包插件 <u><a target=_blank href=https://chrome.google.com/webstore/detail/cyano-wallet/dkdedlpgdmmkkfjabffeganieamfklkm>Cyano Wallet</a></u> 来玩 本体矿工！</div>
       </div>
     </div>
  </div>
  <div class=mainPage>
 
- <div class="title h1">ONG Miner <div class="loading loading-lg float-right hide"></div></div>
+ <div class="title h1"><span class=red>O</span>NG Miner <div class="loading loading-lg float-right hide"></div></div>
 
 
  <header class="navbar mt-3">
     <section class=navbar-section>
       <a href=# class="navbar-brand mr-2">首页</a>
       <a href=javascript:void(0) class="btn btn-link" onclick=App.ruleTip()>规则</a>
-      <a class="btn btn-link" target=_blank href=https://github.com/oppfx/superMiner>GitHub</a>
+      <a class="btn btn-link" target=_blank href=https://github.com/kdufx/ongminer/blob/master/contract/ongMiner.py>GitHub</a>
     </section>
     <section class=navbar-section>
         <button class=btn onclick=App.startMining()> 开始挖矿 </button>
@@ -48,8 +48,8 @@
                 <div class="card-body nav-block-nextKey">
                     
                   </div>
-                <div class=card-footer>
-                  下一个区块奖励 100 ONG 
+                <div class="card-footer nav-block-nextBonus">
+                  
                 </div>
               </div>
             </div>
@@ -57,25 +57,25 @@
       </section>
   </header>
 
-  <div class="container mt-3 bg-dark">
+  <div class="container mt-3">
     <div class=columns>
       <div class="card col-4">
       <div class=card-body>
         <div class="miner-record h3">
-            <div class="card hide" id=builder>
-               <button class=btn onclick="$('#modal-deposit').addClass('active')">充值</button>
-               <button class=btn onclick=App.getBalance()>读取</button>
-               <button class=btn onclick="$('#modal-takeout').addClass('active')">提现</button>
-            </div>
+            <!-- <div class="card hide" id="builder">
+               <button class="btn" onclick="$('#modal-deposit').addClass('active')">充值</button>
+               <button class="btn" onclick="App.getBalance()">读取</button>
+               <button class="btn" onclick="$('#modal-takeout').addClass('active')">提现</button>
+            </div> -->
           挖矿记录
           
-          <div class=h6 id=status>
+          <div class="h6 green" id=status>
 
           </div>
         </div>
       </div>
       </div>
-      <div class="card col-8 bg-dark">
+      <div class="card col-8">
         <div class="card-body miner-block mt-1 ml-1">
          </div>
       </div>
@@ -83,10 +83,10 @@
   </div>
 
   <div class="footer card-body text-center mt-3">
-        <a href="">
-          <img src=./image/logo-b.png width=150 height=50>
-        </a>
-        <div>基于星云链上的挖矿游戏</div>
+        <!-- <a href="">
+          <img src="./image/ont_logo.png" width="50" height="50">
+        </a> -->
+        <div>Power by Ontology</div>
       </div>
 </div>
     
@@ -96,7 +96,7 @@
         <div class=modal-container>
           <div class=modal-header>
             <a href=javascript:void(0) class="btn btn-clear float-right" aria-label=Close onclick=App.msgClose()></a>
-            <div class="modal-title h5">Super Miner 游戏规则</div>
+            <div class="modal-title h5">ONG Miner 游戏规则</div>
           </div>
           <div class=modal-body>
             <div class=content>
@@ -105,7 +105,7 @@
             </div>
           </div>
           <div class=modal-footer>
-            <button class="btn btn-primary" onclick=App.msgClose()>确定</button>
+            <button class="btn btn-primary" onclick=App.noTip()>不再提示</button>
             <button class=btn onclick=App.msgClose()>关闭</button>
           </div>
         </div>
@@ -157,9 +157,9 @@
 
 
           <script src=/js/jquery-2.1.4.min.js></script>
-  
+          <script src=js/bignumber.min.js></script>
           <script src=js/ontology-dapi.min.js></script>
-          <script src=/js/app.js></script>
-<script type=text/javascript src=js/path.js?263f6888f95da4e1896d></script></body>
+          <!-- <script src="/js/app.js"></script> -->
+<script type=text/javascript src=js/path.js?44c6b02e496a7264c6f3></script></body>
 
 </html>
